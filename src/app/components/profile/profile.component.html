@@ -1,0 +1,33 @@
+<div
+  class="border rounded-md flex flex-col sm:flex-row divide-y sm:divide-y-0 sm:divide-x divide-blue-300 p-6 shadow-md border-blue-300"
+>
+  <div
+    class="flex flex-col justify-center space-y-3 pb-3 w-72 self-center sm:px-7"
+  >
+    <app-user-image
+      [image]="profile.image"
+      [firstName]="profile.firstName"
+      [bloodGroup]="profile.bloodGroup"
+      [height]="profile.height"
+      [weight]="profile.weight"
+    >
+    </app-user-image>
+  </div>
+  <div class="flex flex-col space-y-3 py-3 sm:w-3/5 sm:pl-7">
+    <div>
+      <p class="font-bold text-3xl">
+        {{ profile.firstName }} {{ profile.lastName }}
+      </p>
+      <span class="text-gray-500">{{ profile.address.address }}</span>
+    </div>
+    <app-user-details
+      [email]="profile.email"
+      [city]="profile.address.city"
+      [state]="profile.address.state"
+      [phone]="profile.phone"
+    ></app-user-details>
+    <div>
+      <button class="py-3 border w-full rounded-lg bg-blue-400">Summary</button>
+    </div>
+  </div>
+</div>
